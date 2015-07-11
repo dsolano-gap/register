@@ -191,3 +191,96 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/user_communities/new" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserCommunitiesController#new as HTML
+  Rendered user_communities/_form.html.erb (9.5ms)
+  Rendered user_communities/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 46ms (Views: 36.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/user_communities.css?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/user_communities.js?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-11 09:08:58 -0600
+
+
+Started POST "/user_communities" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+Processing by UserCommunitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uf82EIyheQ0YRuO7TGIelFKQfeEps+KVzLSTj8sVyRM=", "user_community"=>{"name"=>"Victor Guzman", "email"=>"vguzman@growthaccelerationpartners.com"}, "commit"=>"Create User community"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "user_communities" ("created_at", "email", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 11 Jul 2015 15:09:20 UTC +00:00], ["email", "vguzman@growthaccelerationpartners.com"], ["name", "Victor Guzman"], ["updated_at", Sat, 11 Jul 2015 15:09:20 UTC +00:00]]
+  [1m[35m (66.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/user_communities/2
+Completed 302 Found in 72ms (ActiveRecord: 69.2ms)
+
+
+Started GET "/user_communities/2" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+Processing by UserCommunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUserCommunity Load (0.5ms)[0m  [1mSELECT "user_communities".* FROM "user_communities" WHERE "user_communities"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered user_communities/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/user_communities.css?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/user_communities.js?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-11 09:09:20 -0600
+
+
+Started GET "/user_communities" for 127.0.0.1 at 2015-07-11 09:09:22 -0600
+Processing by UserCommunitiesController#index as HTML
+  [1m[35mUserCommunity Load (0.2ms)[0m  SELECT "user_communities".* FROM "user_communities"
+  Rendered user_communities/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
