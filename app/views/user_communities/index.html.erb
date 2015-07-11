@@ -1,0 +1,29 @@
+<h1>Listing user_communities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_communities.each do |user_community| %>
+      <tr>
+        <td><%= user_community.name %></td>
+        <td><%= user_community.email %></td>
+        <td><%= link_to 'Show', user_community %></td>
+        <td><%= link_to 'Edit', edit_user_community_path(user_community) %></td>
+        <td><%= link_to 'Destroy', user_community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User community', new_user_community_path %>

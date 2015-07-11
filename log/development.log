@@ -1,0 +1,193 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 08:56:45 -0600
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'bin/rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.10) lib/active_record/migration.rb:383:in `check_pending!'
+  activerecord (4.0.10) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.10) lib/active_support/callbacks.rb:373:in `_run__2271372525248009879__call__callbacks'
+  activesupport (4.0.10) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.0.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.0.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.0.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.10) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.10) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.10) lib/rails/engine.rb:511:in `call'
+  railties (4.0.10) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/dsolano/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/dsolano/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/dsolano/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/dsolano/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/dsolano/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/dsolano/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/dsolano/.rvm/gems/ruby-2.2.1/gems/actionpack-4.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+  [1m[36m (233.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (46.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150711145419)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (71.1ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150711145419"]]
+  [1m[36m (33.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCommunities (20150711145558)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (82.0ms)[0m  [1mCREATE TABLE "user_communities" ("id" serial primary key, "name" character varying(255), "email" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150711145558"]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/user_communities/new" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UserCommunitiesController#new as HTML
+  Rendered user_communities/_form.html.erb (39.5ms)
+  Rendered user_communities/new.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 618ms (Views: 582.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/user_communities.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/user_communities.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:37 -0600
+
+
+Started POST "/user_communities" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+Processing by UserCommunitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uf82EIyheQ0YRuO7TGIelFKQfeEps+KVzLSTj8sVyRM=", "user_community"=>{"name"=>"David Solano", "email"=>"davso7@gmail.com"}, "commit"=>"Create User community"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (100.6ms)[0m  [1mINSERT INTO "user_communities" ("created_at", "email", "name", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 11 Jul 2015 14:57:55 UTC +00:00], ["email", "davso7@gmail.com"], ["name", "David Solano"], ["updated_at", Sat, 11 Jul 2015 14:57:55 UTC +00:00]]
+  [1m[35m (58.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/user_communities/1
+Completed 302 Found in 163ms (ActiveRecord: 159.2ms)
+
+
+Started GET "/user_communities/1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+Processing by UserCommunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserCommunity Load (0.4ms)[0m  [1mSELECT "user_communities".* FROM "user_communities" WHERE "user_communities"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered user_communities/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/user_communities.css?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/user_communities.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-11 08:57:55 -0600
+
+
+Started GET "/user_communities" for 127.0.0.1 at 2015-07-11 08:58:03 -0600
+Processing by UserCommunitiesController#index as HTML
+  [1m[35mUserCommunity Load (0.2ms)[0m  SELECT "user_communities".* FROM "user_communities"
+  Rendered user_communities/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user_communities/new" for 127.0.0.1 at 2015-07-11 08:58:09 -0600
+Processing by UserCommunitiesController#new as HTML
+  Rendered user_communities/_form.html.erb (2.0ms)
+  Rendered user_communities/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_communities/new" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+Processing by UserCommunitiesController#new as HTML
+  Rendered user_communities/_form.html.erb (2.0ms)
+  Rendered user_communities/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/user_communities.css?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/user_communities.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-11 08:58:47 -0600
